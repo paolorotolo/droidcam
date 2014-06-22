@@ -2,6 +2,8 @@ DroidCam for Ubuntu
 ==============
 DroidCam – Use your Android phone as a wireless webcam or an IP Cam!
 
+![DroidCam Image](http://paolorotolo.github.io/resources/img/intro.jpg)
+
 ### Installation
 - Install client app on your PC from my PPA with:
 ```
