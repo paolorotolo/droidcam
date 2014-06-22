@@ -21,4 +21,5 @@ sudo apt-get install droidcam
 
 <br/> 
 
-Licensed under the GPL-3.0+ 
+Licensed under the GPL-3.0+ <br/> 
+Developed by [Paolo Rotolo](http://paolorotolo.github.io/)
