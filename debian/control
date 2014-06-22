@@ -1,0 +1,13 @@
+Source: droidcam
+Section: video
+Priority: optional
+Maintainer: Paolo Rotolo <paolorotolo@ubuntu.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.5
+
+
+Package: droidcam
+Architecture: any
+Depends: ${misc:Depends}
+Description: Droidcam.
+ Use your Android phone as a wireless webcam or an IP Cam!

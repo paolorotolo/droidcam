@@ -1,0 +1,17 @@
+droidcam (1.2-0ubuntu0) trusty; urgency=medium
+
+  * Fixed postrm script.
+
+ -- Paolo Rotolo <paolorotolo@ubuntu.com>  Sat, 21 Jun 2014 11:33:16 +0200
+
+droidcam (1.1-0ubuntu0) trusty; urgency=medium
+
+  * Fixed wrong name.
+
+ -- Paolo Rotolo <paolorotolo@ubuntu.com>  Thu, 20 Jun 2014 16:55:16 +0200
+
+droidcam (1.0-0ubuntu0) trusty; urgency=medium
+
+  * Initial release.
+
+ -- Paolo Rotolo <paolorotolo@ubuntu.com>  Thu, 17 Jun 2014 23:00:16 +0200

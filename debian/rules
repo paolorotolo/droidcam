@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_ARCH_CPU  ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+DEB_HOST_ARCH_OS   ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	touch configure-stamp
+
+build: build-arch build-indep
+
+build-arch: build-stamp
+build-indep: build-stamp
+
+build-stamp: configure-stamp
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	install -Dm 644 $(CURDIR)/droidcam.svg $(CURDIR)/debian/droidcam/usr/share/icons/hicolor/scalable/apps/droidcam.svg
+	install -Dm 644 $(CURDIR)/droidcam.desktop $(CURDIR)/debian/droidcam/usr/share/applications/droidcam.desktop
+ifeq ($(DEB_HOST_ARCH),amd64)
+	install -Dm 644 $(CURDIR)/droidcam-v4l2-x64.tar.gz $(CURDIR)/debian/droidcam/opt/droidcam/droidcam-v4l2-x64.tar.gz
+else
+	install -Dm 644 $(CURDIR)/droidcam-v4l2-x86.tar.gz $(CURDIR)/debian/droidcam/opt/droidcam/droidcam-v4l2-x86.tar.gz
+endif
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_icons
+	dh_installmenu
+	dh_installmime
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install
