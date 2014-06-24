@@ -2,13 +2,15 @@
 
 set -e
 
+ON_USER=$(who | awk '{print $1}' | sed '/^root$/d' | uniq)
+
 case "$1" in
   purge|remove)
     if [ -e /opt/droidcam ]; then
       rm -rf /opt/droidcam
       rmmod v4l2loopback-dc
       rm -f /lib/modules/`uname -r`/kernel/drivers/media/video/v4l2loopback-dc.ko
-      rm -rf ~/.droidcam/
+      rm -rf "/home/${ON_USER}/.droidcam"
 
     fi
   ;;

@@ -2,9 +2,17 @@
 
 set -e
 
+ON_USER=$(who | awk '{print $1}' | sed '/^root$/d' | uniq)
+
 case "$1" in
 
   configure)
+
+    if lsmod | grep v4l2loopback_dc >/dev/null; then
+      rmmod v4l2loopback-dc
+      rm -f /lib/modules/`uname -r`/kernel/drivers/media/video/v4l2loopback-dc.ko
+    fi
+    rm -rf "/home/${ON_USER}/.droidcam"
     cd /opt/droidcam/
     tar -xvf *.tar.gz
     rm -r *.tar.gz

@@ -1,3 +1,9 @@
+droidcam (1.3-0ubuntu0) trusty; urgency=medium
+
+  * Merged Alin Andrei's changes. Fixes depends bug.
+
+ -- Paolo Rotolo <paolorotolo@ubuntu.com>  Sat, 21 Jun 2014 16:32:16 +0200
+
 droidcam (1.2-0ubuntu0) trusty; urgency=medium
 
   * Fixed postrm script.
