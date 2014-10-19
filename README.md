@@ -13,7 +13,7 @@ sudo apt-get update
 sudo apt-get install droidcam
 ```
 
-- Install app on your Android device from [Google Play](https://play.google.com/store/apps/details?id=com.dev47apps.droidcam&hl=it)
+- Install app on your Android device via [Google Play](https://play.google.com/store/apps/details?id=com.dev47apps.droidcam&hl=it)
 
 ### How to use
 - Open *DroidCam* on your Android device;
