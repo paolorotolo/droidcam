@@ -1,7 +1,7 @@
 DroidCam for Ubuntu 
 ==============
 
--Juan Francisco Santiago Bonora 1889331
+-Juan Francisco Santiago Bonora 1889331<br/>
 -Andrea Garay Ibarra 1810821
 
 DroidCam – Use your Android phone as a wireless webcam or an IP Cam!
