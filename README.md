@@ -1,4 +1,4 @@
-DroidCam for Ubuntu 
+IpCam
 ==============
 
 -Juan Francisco Santiago Bonora 1889331<br/>
